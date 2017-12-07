@@ -15,7 +15,7 @@ zookeeper_peers_nodes: "
 "
 
 
-spark_mesos_deploy_app: "apache-zeppelin" #valid values: 'apache-zeppelin', 'spark-dispatcher'
+spark_mesos_deploy_app: "spark-dispatcher" #valid values: 'apache-zeppelin', 'spark-dispatcher'
 
 spark_mesos_dispatcher_master_uri: "mesos://zk://{{ zookeeper_peers_nodes }}/mesos"
 spark_mesos_dispatcher_zk_url: "{{zookeeper_peers_nodes}}"
