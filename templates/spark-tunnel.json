@@ -11,7 +11,7 @@
     "type": "DOCKER",
     "volumes": [],
     "docker": {
-      "image": "dodasts/sshtunnel",
+      "image": "indigodatacloudapps/sshtunnel",
       "network": "BRIDGE",
       "portMappings": [
         {
