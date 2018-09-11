@@ -1,0 +1,26 @@
+{
+    "id": "/spark-shuffle-service",
+    "cmd": "/usr/bin/docker run --network host -e ZOOKEEPER_HOST_LIST={{zookeeper_peers_nodes}} {{spark_mesos_image}}:base /opt/spark/bin/spark-class org.apache.spark.deploy.mesos.MesosExternalShuffleService",
+    "cpus": 0.1,
+    "mem": 32,
+    "disk": 0,
+    "instances": {{ spark_slaves_num }},
+    "constraints": [
+      [
+        "hostname",
+        "UNIQUE"
+      ]
+    ],
+    "acceptedResourceRoles": [
+      "*"
+    ],
+    "portDefinitions": [
+      {
+        "port": 10001,
+        "protocol": "tcp",
+        "name": "default",
+        "labels": {}
+      }
+    ],
+    "user": "root"
+  }

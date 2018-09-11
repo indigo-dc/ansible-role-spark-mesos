@@ -52,3 +52,5 @@ spark_mesos_executor_docker_image: indigodatacloudapps/mesos-spark
 ## Don't change the following parameters 
 spark_mesos_dispatcher_haproxy_group: external
 spark_mesos_zeppelin_haproxy_group: external
+
+spark_slaves_num: 1

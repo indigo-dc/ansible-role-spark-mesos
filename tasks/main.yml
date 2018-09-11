@@ -72,6 +72,23 @@
   tags:
     - spark
 
+- name: "[Spark-Mesos] deploy spark shuffle service app container on Marathon"
+  run_once: true
+  uri:
+     url: "{{marathon_protocol}}://marathon.service.consul:{{marathon_port}}/v2/apps"
+     user: "{{marathon_username}}"
+     password: "{{marathon_password}}"
+     validate_certs: "no"
+     method: POST
+     HEADER_Content-Type: "application/json"
+     body: "{{ lookup('template', 'templates/spark-shuffle-service.json') }}"
+     body_format: json
+     status_code: 201
+  register: post_result
+  when: spark_mesos_deploy_app == "spark-dispatcher"
+  tags:
+    - spark
+
 
 - name: debug
   debug: msg="{{ lookup('template', 'templates/{{app_name}}.json') }}"
