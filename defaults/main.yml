@@ -53,4 +53,4 @@ spark_mesos_executor_docker_image: indigodatacloudapps/mesos-spark
 spark_mesos_dispatcher_haproxy_group: external
 spark_mesos_zeppelin_haproxy_group: external
 
-spark_slaves_num: 1
+spark_mesos_slave_num: 1
