@@ -1,6 +1,6 @@
 {
   "id": "/spark-tunnel",
-  "cpus": 0.1,
+  "cpus": 0.05,
   "mem": 32,
   "disk": 0,
   "instances": 1,

@@ -1,7 +1,7 @@
 {
   "id": "/spark-dispatcher",
-  "cpus": 2,
-  "mem": 2048,
+  "cpus": 0.5,
+  "mem": 1024,
   "instances": 1,
   "container":{
     "type" : "DOCKER",
