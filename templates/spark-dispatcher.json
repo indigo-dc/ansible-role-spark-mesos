@@ -1,18 +1,20 @@
 {
-  "id": "/spark-dispatcher",
-  "cpus": 0.5,
-  "mem": 1024,
-  "instances": 1,
-  "container":{
-    "type" : "DOCKER",
-    "docker": {
-      "image" : "{{spark_mesos_image}}:bastion",
-      "network": "HOST",
-      "privileged": true,
-      "forcePullImage": true
-    }
-  },
-  "env": {
-     "ZOOKEEPER_HOST_LIST":"{{zookeeper_peers_nodes}}"
+    "id": "/spark-dispatcher",
+    "cmd": "/usr/bin/docker run --network host -e ZOOKEEPER_HOST_LIST={{zookeeper_peers_nodes}} {{spark_mesos_image}}:base /opt/spark/bin/spark-class org.apache.spark.deploy.mesos.MesosClusterDispatcher --master mesos://90.147.75.88:5050",
+    "cpus": 0.1,
+    "mem": 32,
+    "disk": 0,
+    "instances": 1,
+    "acceptedResourceRoles": [
+      "*"
+    ],
+    "portDefinitions": [
+      {
+        "port": 10001,
+        "protocol": "tcp",
+        "name": "default",
+        "labels": {}
+      }
+    ],
+    "user": "root"
   }
-}

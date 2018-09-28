@@ -68,7 +68,7 @@
      body_format: json
      status_code: 201
   register: post_result
-  when: spark_mesos_deploy_app == "spark-dispatcher"
+  when: spark_mesos_deploy_app == "spark-bastion"
   tags:
     - spark
 
@@ -85,7 +85,7 @@
      body_format: json
      status_code: 201
   register: post_result
-  when: spark_mesos_deploy_app == "spark-dispatcher"
+  when: spark_mesos_deploy_app == "spark-bastion"
   tags:
     - spark
 

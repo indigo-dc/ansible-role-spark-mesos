@@ -1,0 +1,18 @@
+{
+  "id": "/spark-bastion",
+  "cpus": 0.5,
+  "mem": 1024,
+  "instances": 1,
+  "container":{
+    "type" : "DOCKER",
+    "docker": {
+      "image" : "{{spark_mesos_image}}:bastion",
+      "network": "HOST",
+      "privileged": true,
+      "forcePullImage": true
+    }
+  },
+  "env": {
+     "ZOOKEEPER_HOST_LIST":"{{zookeeper_peers_nodes}}"
+  }
+}
