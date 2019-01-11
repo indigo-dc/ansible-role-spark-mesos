@@ -14,5 +14,19 @@
   },
   "env": {
      "ZOOKEEPER_HOST_LIST":"{{zookeeper_peers_nodes}}"
-  }
+  },
+  "healthChecks": [
+    {
+      "command": {
+        "value": "[ -z `pgrep sshd` ] && echo '1' || echo '0';"
+      },
+      "gracePeriodSeconds": 300,
+      "intervalSeconds": 60,
+      "maxConsecutiveFailures": 3,
+      "protocol": "COMMAND",
+      "ipProtocol": "IPv4",
+      "timeoutSeconds": 20,
+      "delaySeconds": 15
+    }
+  ]
 }
