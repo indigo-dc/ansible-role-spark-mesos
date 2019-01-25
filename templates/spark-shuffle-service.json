@@ -1,8 +1,8 @@
 {
     "id": "/spark-shuffle-service",
     "cmd": "/usr/bin/docker run --network host -e ZOOKEEPER_HOST_LIST={{zookeeper_peers_nodes}} {{spark_mesos_image}}:base /opt/spark/bin/spark-class org.apache.spark.deploy.mesos.MesosExternalShuffleService",
-    "cpus": 0.05,
-    "mem": 32,
+    "cpus": 0.1,
+    "mem": 64,
     "disk": 0,
     "instances": {{ spark_mesos_slave_num }},
     "constraints": [
