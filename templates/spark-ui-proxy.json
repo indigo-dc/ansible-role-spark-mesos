@@ -22,7 +22,7 @@
           "containerPort": 4040,
           "hostPort": 0,
           "labels": {},
-          "name": "ssh",
+          "name": "sparkui",
           "protocol": "tcp",
           "servicePort": 34040
         }
