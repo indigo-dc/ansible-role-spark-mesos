@@ -18,10 +18,9 @@
      "JUPYTER_PASSWORD": "{{ jupyter_password }}"
   },
   "healthChecks": [
-    {% if bastion_target == "SSH" %}
     {
       "command": {
-        "value": "[ -z `pgrep sshd` ] && echo '1' || echo '0';"
+        "value": "bastionHealthCheck"
         
       },
       "gracePeriodSeconds": 300,
@@ -32,6 +31,5 @@
       "timeoutSeconds": 20,
       "delaySeconds": 15
     }
-    {% endif %}
   ]
 }
