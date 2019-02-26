@@ -13,7 +13,9 @@
     }
   },
   "env": {
-     "ZOOKEEPER_HOST_LIST":"{{zookeeper_peers_nodes}}"
+     "ZOOKEEPER_HOST_LIST":"{{zookeeper_peers_nodes}}",
+     "CONTAINER_TARGET": "{{ bastion_target }}",
+     "JUPYTER_PASSWORD": "{{ jupyter_password }}"
   },
   "healthChecks": [
     {

@@ -15,7 +15,7 @@ zookeeper_peers_nodes: "
 "
 
 
-spark_mesos_deploy_app: "apache-zeppelin" #valid values: 'apache-zeppelin', 'spark-dispatcher'
+spark_mesos_deploy_app: "apache-zeppelin" #valid values: 'apache-zeppelin', 'spark-bastion'
 
 spark_mesos_dispatcher_master_uri: "mesos://zk://{{ zookeeper_peers_nodes }}/mesos"
 spark_mesos_dispatcher_zk_url: "{{zookeeper_peers_nodes}}"
@@ -38,6 +38,9 @@ spark_mesos_swift_tenant: ''
 spark_mesos_swift_username: ''
 spark_mesos_swift_password: ''
 spark_mesos_swift_provider: "Test"
+
+bastion_target: 'JUPYTER'  # valid values: ['JUPYTER', 'SSH']
+jupyter_password: 'test'
 
 ####
 # Spark properties
